@@ -1,3 +1,5 @@
+updateView();
+
 function updateView(){
     let html = /*HTML*/`
         <h2>Enkel Kalkulator</h2>
@@ -5,11 +7,11 @@ function updateView(){
         <input onchange="operatorInput = this.value">
         <input onchange="tallToInput = Number(this.value)" type="number">
         
-        <button onclick="beregnFunk()">Beregn</button>
+        <button onclick="beregnTest()">Beregn</button>
+        <div>${beregning()}</div>
     `;
 
     appView.innerHTML = html;
 
 }
 
-updateView();
