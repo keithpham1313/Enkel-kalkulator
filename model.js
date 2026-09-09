@@ -4,4 +4,3 @@ let tallEnInput;
 let tallToInput;
 
 let operatorInput;
-
