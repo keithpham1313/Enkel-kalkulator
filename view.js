@@ -1,58 +1,69 @@
 function updateView(){
     let html = /*HTML*/`
-        <h2>Enkel Kalkulator</h2>
-        <input onchange="tallEnInput = Number(this.value)" type="number">
-        <input onchange="operatorInput = this.value">
-        <input onchange="tallToInput = Number(this.value)" type="number">
-        
-        <button onclick="beregnTest()">Beregn</button>
-        <div>Sum: ${beregning()}</div>
-        
-        ${visKnappOperatør()}
+        <div class="calculator">
+
+            <h2>Enkel Kalkulator</h2>
+
+            <div class="display">
+                <div class="calc-input">${tallEnInput}</div>
+
+                <div class="operator-input">${operatorInput}</div>
+
+                <div class="calc-input">${tallToInput}</div>
+            </div>
+
+            <div class="result">
+                Sum: <span>${resultat}</span>
+            </div>
+
+            <div class="button-grid">
+                ${visKnappOperatør()}
+            </div>
+
+        </div>
     `;
-
-
 
     appView.innerHTML = html;
 }
 
+
 function visKnappOperatør(){
     let operatørHTML = "";
 
+    // Knapper for operatører
     for(let i = 0; i < operatører.length; i++){
 
         operatørHTML += /*HTML*/`
-            <button onclick="operatørFunk(${operatører[i]})">${operatører[i]}</button>
-
+            <button 
+                class="btn-operator"
+                onclick="operatørFunk('${operatører[i]}')">
+                ${operatører[i]}
+            </button>
         `;
-    };
+    }
 
+    // Knapper for tall
     for(let t = 0; t < 10; t++){
-        operatørHTML += /*HTML*/ `
-            <button onclick="tallFunk()">${[t]}</button>
+
+        operatørHTML += /*HTML*/`
+            <button 
+                class="btn-number"
+                onclick="tallFunk(${t})">
+                ${t}
+            </button>
         `;
     }
+
+    // = knapp
+        operatørHTML += /*HTML*/`
+            <button 
+                class="btn-equal"
+                onclick="beregn()">
+                =
+            </button>
+        `;
+
     return operatørHTML;
-
 }
-
-
-function beregning(){
-    let sum = 0;
-
-    if(operatorInput === "+"){
-        return sum = tallEnInput + tallToInput;
-    }
-    else if(operatorInput === "-"){
-        return sum = tallEnInput - tallToInput;
-    }
-    else if(operatorInput === "*"){
-        return sum = tallEnInput * tallToInput;
-    }
-    else if(operatorInput === "/"){
-        return sum = tallEnInput / tallToInput;
-    }
-}
-
 
 updateView();
