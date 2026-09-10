@@ -47,3 +47,12 @@ function beregning(){
 
     return 0;
 }
+
+function clearFunk(){
+    tallEnInput = "";
+    tallToInput = "";
+    operatorInput = "";
+    resultat = "";
+
+    updateView();
+}

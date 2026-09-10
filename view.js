@@ -53,6 +53,13 @@ function visKnappOperatør(){
             </button>
         `;
     }
+        operatørHTML += /*HTML*/`
+            <button
+                class="btn-number"
+                onclick="clearFunk()">
+                C
+            </button>
+        `;
 
     // = knapp
         operatørHTML += /*HTML*/`
