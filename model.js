@@ -1,6 +1,12 @@
 let appView = document.getElementById('app');
 
-let tallEnInput;
-let tallToInput;
+let tallEnInput = '';
+let tallToInput = '';
+let operatorInput = '';
 
-let operatorInput;
+let operatører = [
+    "+",
+    "-",
+    "*",
+    "/",
+];
