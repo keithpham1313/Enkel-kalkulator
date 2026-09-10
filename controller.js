@@ -1,11 +1,10 @@
 function tallFunk(tall){
 
     if(operatorInput === ''){
-
         tallEnInput += tall;
-
-    } else {
-
+    } 
+    
+    else {
         tallToInput += tall;
     }
 
@@ -49,6 +48,7 @@ function beregning(){
 }
 
 function clearFunk(){
+    
     tallEnInput = "";
     tallToInput = "";
     operatorInput = "";

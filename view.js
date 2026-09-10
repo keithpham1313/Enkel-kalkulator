@@ -53,6 +53,8 @@ function visKnappOperatør(){
             </button>
         `;
     }
+
+    // Clear-knapp
         operatørHTML += /*HTML*/`
             <button
                 class="btn-number"
@@ -61,7 +63,7 @@ function visKnappOperatør(){
             </button>
         `;
 
-    // = knapp
+    // "="-knapp
         operatørHTML += /*HTML*/`
             <button 
                 class="btn-equal"
