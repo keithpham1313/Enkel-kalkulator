@@ -52,7 +52,27 @@ function clearFunk(){
     tallEnInput = "";
     tallToInput = "";
     operatorInput = "";
-    resultat = "";
+    resultat = "0";
 
+    updateView();
+}
+
+function kommaFunk(){
+    if(operatorInput === ""){
+        tallEnInput += ".";
+    }
+    else{
+        tallToInput += ".";
+    }
+    updateView();
+}
+
+function deleteFun(){
+    if(operatorInput === ""){
+        tallEnInput = tallEnInput.slice(0, -1);
+    }
+    else{
+        tallToInput = tallToInput.slice(0, -1);
+    }
     updateView();
 }

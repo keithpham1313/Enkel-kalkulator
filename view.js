@@ -1,19 +1,16 @@
 function updateView(){
+
     let html = /*HTML*/`
         <div class="calculator">
 
             <h2>Enkel Kalkulator</h2>
 
             <div class="display">
-                <div class="calc-input">${tallEnInput}</div>
-
-                <div class="operator-input">${operatorInput}</div>
-
-                <div class="calc-input">${tallToInput}</div>
+                <div class="calc-input">${tallEnInput + operatorInput + tallToInput}</div>
             </div>
 
             <div class="result">
-                Sum: <span>${resultat}</span>
+                <span>${resultat}</span>
             </div>
 
             <div class="button-grid">
@@ -28,7 +25,8 @@ function updateView(){
 
 
 function visKnappOperatør(){
-    let operatørHTML = "";
+
+    let operatørHTML = ``;
 
     // Knapper for operatører
     for(let i = 0; i < operatører.length; i++){
@@ -62,6 +60,24 @@ function visKnappOperatør(){
                 C
             </button>
         `;
+
+    // ","-knapp
+        operatørHTML += /*HTML*/`
+            <button
+                class="btn-number"
+                onclick="kommaFunk()">
+                ,
+            </button>
+        `;
+    
+    //Delete knapp
+    operatørHTML += /*HTML*/`
+        <button
+            class="btn-number"    
+            onclick="deleteFun()">
+            <
+        </button>
+    `;
 
     // "="-knapp
         operatørHTML += /*HTML*/`
