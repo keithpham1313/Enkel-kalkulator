@@ -57,15 +57,31 @@ function clearFunk(){
     updateView();
 }
 
+//Forhindre a komma kan bli trykket på flere ganger.
 function kommaFunk(){
     if(operatorInput === ""){
-        tallEnInput += ".";
+        if(!tallEnInput.includes(".")){
+            tallEnInput += ".";
+        }
+        
     }
     else{
-        tallToInput += ".";
+        if(!tallToInput.includes(".")){
+            tallToInput += ".";
+        }
     }
     updateView();
 }
+
+// function kommaFunk(){
+//     if(operatorInput === ""){
+//         tallEnInput += ".";
+//     }
+//     else{
+//         tallToInput += ".";
+//     }
+//     updateView();
+// }
 
 function deleteFun(){
     if(operatorInput === ""){

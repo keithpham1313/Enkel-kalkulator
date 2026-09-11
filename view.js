@@ -6,11 +6,11 @@ function updateView(){
             <h2>Enkel Kalkulator</h2>
 
             <div class="display">
-                <div class="calc-input">${tallEnInput + operatorInput + tallToInput}</div>
+                <div class="calc-input">${(tallEnInput + operatorInput + tallToInput).replaceAll(".", ",")}</div>
             </div>
 
             <div class="result">
-                <span>${resultat}</span>
+                <span>${String(resultat).replaceAll(".", ",")}</span>
             </div>
 
             <div class="button-grid">
@@ -34,8 +34,8 @@ function visKnappOperatør(){
         operatørHTML += /*HTML*/`
             <button 
                 class="btn-operator"
-                onclick="operatørFunk('${operatører[i]}')">
-                ${operatører[i]}
+                onclick="operatørFunk('${operatører[i].operator}')">
+                ${operatører[i].symbol}
             </button>
         `;
     }
@@ -75,7 +75,7 @@ function visKnappOperatør(){
         <button
             class="btn-number"    
             onclick="deleteFun()">
-            <
+            ⌫
         </button>
     `;
 
